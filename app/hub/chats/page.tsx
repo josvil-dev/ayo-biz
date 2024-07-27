@@ -54,8 +54,8 @@ export default function Chats() {
   return (
     <div className="flex h-screen">
       {/* Contacts Sidebar */}
-      <div className="w-1/4 bg-gray-100 overflow-y-auto">
-        <h2 className="text-xl font-bold p-4">Contacts</h2>
+      <div className="w-1/4 border-r bg-blue-100 overflow-y-auto">
+        <h2 className="text-xl font-bold p-4 border-b-4">Contacts</h2>
         {contacts.map(contact => (
           <div
             key={contact.id}
