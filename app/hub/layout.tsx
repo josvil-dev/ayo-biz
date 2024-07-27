@@ -1,33 +1,41 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../../app/globals.css"
+import Link from 'next/link'
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <><nav className="fixed top-0 left-0 h-full bg-gray-800 text-white hidden lg:block">
-          {/* Navbar content here */}
-          <ul>
-              <li>Home</li>
-              <li>Dashboard</li>
-              <li>Contact</li>
-              <li>Information</li>
-          </ul>
-      </nav>
-          // Mobile navbar
-          <nav className={`fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 lg:hidden`}>
-              <button className="absolute top-0 right-0 p-2">
-                  {/* Hamburger icon or close icon */}
-              </button>
-              <ul>
-                  <li>Home</li>
-                  <li>Dashboard</li>
-                  <li>Contact</li>
-                  <li>Information</li>
-              </ul>
-          </nav></>
-  );
+    <html lang="en">
+      <body>
+        <div className="flex h-screen bg-gray-100">
+          {/* Sidebar */}
+          <div className="w-64 bg-white shadow-md">
+            <nav className="mt-5">
+              <Link href="/hub/dashboard" className="block py-2 px-4 text-gray-700 hover:bg-gray-200">
+                Dashboard
+              </Link>
+              <Link href="/hub/chats" className="block py-2 px-4 text-gray-700 hover:bg-gray-200">
+                Chats
+              </Link>
+              <Link href="/hub/broadcast" className="block py-2 px-4 text-gray-700 hover:bg-gray-200">
+                Broadcast Center
+              </Link>
+              <Link href="/hub/settings" className="block py-2 px-4 text-gray-700 hover:bg-gray-200">
+                Settings
+              </Link>
+              <Link href="/hub/account" className="block py-2 px-4 text-gray-700 hover:bg-gray-200">
+                Account
+              </Link>
+            </nav>
+          </div>
+          
+          {/* Main content */}
+          <div className="flex-1 p-10">
+            {children}
+          </div>
+        </div>
+      </body>
+    </html>
+  )
 }
