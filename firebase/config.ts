@@ -1,9 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+
+import { Database, getDatabase } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDIQnlOKMGm7BweztvUa6fv9gN2bxN82Q0",
     authDomain: "ayoba-business-hub.firebaseapp.com",
+    databaseURL: "https://ayoba-business-hub-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "ayoba-business-hub",
     storageBucket: "ayoba-business-hub.appspot.com",
     messagingSenderId: "180812932890",
